@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konoha Library</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/08f2670ec6.js" crossorigin="anonymous"></script>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;500;700&family=Roboto:wght@500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="d-flex justify-content-center align-items-center">
+    <!-- navbar start  -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+      <div class="container">
+        <a class="navbar-brand" href="#!"><span style="color: #fdf498;">Konoha</span><span style="color: #fff;"> Library</span></a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Offer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Reference</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#!">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#!">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#!">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+    <div class="border border-5 p-5 bg-dark bg-opacity-50">
+      <div class="text-white">
+        <h1 class="border-bottom text-center mb-5 p-4 text-uppercase">Konoha library</h1>
+        <h2 style="font-family: 'Indie Flower', cursive;"><q>Nothing is pleasanter than exploring a library</q></h1>
+          <p class="text-end fst-italic"><small>-Waltar Savage</small></p>
+
+
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="input-group mb-3 mt-5">
+      <input id="book-name" type="text" class="form-control" placeholder="Search for Books"
+        aria-describedby="search-books">
+      <button class="btn btn-outline-secondary search-btn px-3" type="button" id="search-books"><i
+          class="fa-solid fa-magnifying-glass me-2"></i>Search</button>
+    </div>
+
+    <section class="d-flex justify-content-center m-5">
+      <div id="loading" class="spinner-border text-info" role="status" style="display: none;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </section>
+    <p id="result-found" class="fst-italic" style="display:none">Total <span id="result-count">4</span> results found
+      for <span id="searched-item">Books</span></p>
+
+      <!-- no data found section -->
+      <section>
+        <div  class="d-flex justify-content-center" >
+          <img id="no-data-found" class="img-fluid w-50" style="display: none;" src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?w=2000" alt=""></div>
+      </section>
+    <!-- books container section start  -->
+    <section id="books-display" class="overflow-auto">
+      <div id="book-container" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4  g-4">
+
+        <div class="col">
+                <div class="card h-100 border-0 shadow">
+
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg?ts=1637008457" class="card-img-top p-4" alt="Book Cover"></img>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-4"> The King of Drugs</h5>
+                            <p class="text-center px-4"><small> Nora Barrett</small></p>
+                            <p class="text-center">First Published on <span class="fst-italic">2001</span></p>
+                        </div>
+                        <div class="p-3 d-flex justify-content-between">
+                            <button type="button" class="btn  dark-btn px-3"><i class="fa-solid fa-eye me-2"></i>Preview</button>
+                            <button type="button" class="btn light-btn px-3"><i class="fa-solid fa-book me-2"></i>Borrow</button>
+                        </div>
+                        
+                </div>
+          </div>
+        <div class="col">
+                <div class="card h-100 border-0 shadow">
+
+                        <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/02/attachment_70356173-e1488218242409.jpg?auto=format&q=60&fit=max&w=930" class="card-img-top p-4" alt="Book Cover"></img>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-4"> Red Planet</h5>
+                            <p class="text-center px-4"><small> Robert A. Heinlein</small></p>
+                            <p class="text-center">First Published on <span class="fst-italic">2006</span></p>
+                        </div>
+                        <div class="p-3 d-flex justify-content-between">
+                            <button type="button" class="btn  dark-btn px-3"><i class="fa-solid fa-eye me-2"></i>Preview</button>
+                            <button type="button" class="btn light-btn px-3"><i class="fa-solid fa-book me-2"></i>Borrow</button>
+                        </div>
+                        
+                </div>
+          </div>
+        <div class="col">
+                <div class="card h-100 border-0 shadow">
+
+                        <img src="https://www.adobe.com/express/create/cover/media_1f7a106c92cf2f05ba44cebd18452c2dd4a4bf2a4.jpeg?width=400&format=jpeg&optimize=medium" class="card-img-top p-4" alt="Book Cover"></img>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-4"> The Gods Hate Midnight</h5>
+                            <p class="text-center px-4"><small>Aabidah Hamdi</small></p>
+                            <p class="text-center">First Published on <span class="fst-italic">2011</span></p>
+                        </div>
+                        <div class="p-3 d-flex justify-content-between">
+                            <button type="button" class="btn  dark-btn px-3"><i class="fa-solid fa-eye me-2"></i>Preview</button>
+                            <button type="button" class="btn light-btn px-3"><i class="fa-solid fa-book me-2"></i>Borrow</button>
+                        </div>
+                        
+                </div>
+          </div>
+        <div class="col">
+                <div class="card h-100 border-0 shadow">
+
+                        <img src="https://marketplace.canva.com/EAE8imX33lA/2/0/1003w/canva-dark-blue-nature-forest-mountains-circle-book-cover-NYgMywyULgA.jpg" class="card-img-top p-4" alt="Book Cover"></img>
+
+                        <div class="card-body">
+                            <h5 class="card-title text-center p-4"> Beauty of Nature</h5>
+                            <p class="text-center px-4"><small>Nae-Won Jeon</small></p>
+                            <p class="text-center">First Published on <span class="fst-italic">2020</span></p>
+                        </div>
+                        <div class="p-3 d-flex justify-content-between">
+                            <button type="button" class="btn  dark-btn px-3"><i class="fa-solid fa-eye me-2"></i>Preview</button>
+                            <button type="button" class="btn light-btn px-3"><i class="fa-solid fa-book me-2"></i>Borrow</button>
+                        </div>
+                        
+                </div>
+          </div>
+      </div>
+    </section>
+<section class="m-5">
+
+  <h1 class="text-center m-5 text-capitalize"><span style="color: #ee4035;">Library Hacks</span> That will change your life</h1>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <img class="img-fluid" src="https://cdn.pixabay.com/photo/2019/11/19/22/24/watch-4638673_960_720.jpg" alt="">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Borrow From Online Collections
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">You don't have to step out in the middle of December's icy blizzard or July's heat waves. With a registered library card at your local library, you have various online digital media services at your disposal.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Ask for New Material
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">If it's the latest album, DVD, or Blue-ray you are looking for and don't want to shell out extra money or make the permanent commitment? Check out your local library for all of the newest material.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Continue Your Education
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Most libraries offer classes and workshops where you can utilize information such as writing tips, resume help, and ways to own a home.
+
+              There are thousands of classes you can take, which could be in person or online if you have access to platforms such as:
+              
+              Rosetta Stone is now available at some libraries for learning a new language. All you need is a library card to get started and you're ready to become a Spanish master!
+              Lynda is a library learning database, that provides free college-level courses for free, all online. You can master just about anything on your own schedule.
+              Gale is another way to learn online anytime and anyplace. In some subject areas, you can even become certified. With your library card and a few clicks, you can learn a new skill in no time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+<!-- footer  -->
+<footer class="mainfooter" role="contentinfo">
+  <div class="footer-middle">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Category</h4>
+          <ul class="list-unstyled">
+            <li><a href="#"></a></li>
+            <li><a href="#">Payment Center</a></li>
+            <li><a href="#">Contact Directory</a></li>
+            <li><a href="#">Forms</a></li>
+            <li><a href="#">News and Updates</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Websites</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Website Tutorial</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Webmaster</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>FAQs</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Parks and Recreation</a></li>
+            <li><a href="#">Public Works</a></li>
+            <li><a href="#">Police Department</a></li>
+            <li><a href="#">Fire</a></li>
+            <li><a href="#">Mayor and City Council</a></li>
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    	<div class="col-md-3">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            </ul>				
+		</div>
+    </div>
+	<div class="row">
+		<div class="col-md-12 copy">
+			<p class="text-center">&copy; Copyright 2022 - Konoha Library.  All rights reserved by Shafin</p>
+		</div>
+	</div>
+
+
+  </div>
+  </div>
+</footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
