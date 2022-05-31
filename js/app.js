@@ -10,21 +10,21 @@ let hideShow = (id, value) => {
 document.getElementById('search-books').addEventListener('click', function () {
 
     let bookName = document.getElementById('book-name').value;
-    console.log(bookName);
+    
     hideShow('loading', 'block');
     hideShow('result-found', 'none');
     hideShow('books-display', 'none');
     hideShow('no-data-found', 'none');
     
     bookName = bookName.split(' ').join('%20');
-    console.log(bookName);
+    
     let url = `https://openlibrary.org/search.json?q=${bookName}`;
 
     fetch(url)
         .then(res => res.json())
         .then(data => {
             let books = data.docs;
-            // console.log(data.docs);
+            
             hideShow('loading', 'none');
             hideShow('books-display', 'block');
             document.getElementById('book-container').innerText ='';
@@ -34,7 +34,7 @@ document.getElementById('search-books').addEventListener('click', function () {
             
             
             books.forEach(book => {
-                // console.log(book);
+                
                 let div = document.createElement('div');
                 let bookName = `${book?.title} ${typeof(book?.subtitle) != 'undefined'? ':'+book?.subtitle: ""}`;
                 let coverImage = book?.cover_i;
